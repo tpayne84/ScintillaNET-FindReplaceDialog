@@ -60,6 +60,9 @@ namespace ScintillaNET_FindReplaceDialog
 
 		public GoTo(Scintilla scintilla)
 		{
+		    if( scintilla == null )
+		        throw new ArgumentNullException("scintilla");
+
 			_scintilla = scintilla;
 			_window = CreateWindowInstance();
 			_window.Scintilla = scintilla;

@@ -1,3 +1,5 @@
+using MetroFramework;
+
 namespace ScintillaNET_FindReplaceDialog
 {
     using ScintillaNET;
@@ -27,15 +29,31 @@ namespace ScintillaNET_FindReplaceDialog
         public IncrementalSearcher()
         {
             InitializeComponent();
+            this.BorderStyle = BorderStyle.FixedSingle;
 
+            // Clear
             this.btnClearHighlights.Click += btnClearHighlights_Click;
+            this.btnClearHighlights.MouseHover += ( sender, args ) => this.btnClearHighlights.Theme = MetroThemeStyle.Dark;
+            this.btnClearHighlights.MouseLeave += ( sender, args ) => this.btnClearHighlights.Theme = MetroThemeStyle.Dark;
+
+            // Previous
             this.btnPrevious.Click += btnPrevious_Click;
+            this.btnPrevious.MouseHover += (sender, args) => this.btnClearHighlights.Theme = MetroThemeStyle.Dark;
+            this.btnPrevious.MouseLeave += (sender, args) => this.btnClearHighlights.Theme = MetroThemeStyle.Dark;
+
+            // Next
             this.btnNext.Click += btnNext_Click;
-            this.btnClearHighlights.Click += btnClearHighlights_Click;
+            this.btnNext.MouseHover += (sender, args) => this.btnClearHighlights.Theme = MetroThemeStyle.Dark;
+            this.btnNext.MouseLeave += (sender, args) => this.btnClearHighlights.Theme = MetroThemeStyle.Dark;
+
+            // Highlight All
             this.btnHighlightAll.Click += btnHighlightAll_Click;
+            this.btnHighlightAll.MouseHover += (sender, args) => this.btnClearHighlights.Theme = MetroThemeStyle.Dark;
+            this.btnHighlightAll.MouseLeave += (sender, args) => this.btnClearHighlights.Theme = MetroThemeStyle.Dark;
+
+            // Text
             this.txtFind.KeyDown += txtFind_KeyDown;
             this.txtFind.TextChanged += txtFind_TextChanged;
-
         }
 
         public IncrementalSearcher(bool toolItem, Scintilla scintilla = null) : this()
@@ -188,7 +206,7 @@ namespace ScintillaNET_FindReplaceDialog
             if (r.cpMin != r.cpMax)
                 _scintilla.SetSel(r.cpMin, r.cpMax);
             else
-                this.txtFind.BackColor = Color.Tomato;
+                this.txtFind.BackColor = Color.Yellow;
 
             MoveFormAwayFromSelection();
         }

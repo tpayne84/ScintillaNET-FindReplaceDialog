@@ -55,15 +55,6 @@
             // 
             // 
             // 
-            this.txtCurrentLine.CustomButton.Image = null;
-            this.txtCurrentLine.CustomButton.Location = new System.Drawing.Point(51, 2);
-            this.txtCurrentLine.CustomButton.Name = "";
-            this.txtCurrentLine.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtCurrentLine.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtCurrentLine.CustomButton.TabIndex = 1;
-            this.txtCurrentLine.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtCurrentLine.CustomButton.UseSelectable = true;
-            this.txtCurrentLine.CustomButton.Visible = false;
             this.txtCurrentLine.Lines = new string[0];
             this.txtCurrentLine.Location = new System.Drawing.Point(172, 13);
             this.txtCurrentLine.MaxLength = 32767;
@@ -72,13 +63,10 @@
             this.txtCurrentLine.ReadOnly = true;
             this.txtCurrentLine.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtCurrentLine.SelectedText = "";
-            this.txtCurrentLine.SelectionLength = 0;
-            this.txtCurrentLine.SelectionStart = 0;
             this.txtCurrentLine.Size = new System.Drawing.Size(75, 26);
             this.txtCurrentLine.TabIndex = 1;
             this.txtCurrentLine.UseSelectable = true;
-            this.txtCurrentLine.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtCurrentLine.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtCurrentLine.Enabled = false;
             // 
             // err
             // 
@@ -89,15 +77,6 @@
             // 
             // 
             // 
-            this.txtMaxLine.CustomButton.Image = null;
-            this.txtMaxLine.CustomButton.Location = new System.Drawing.Point(51, 2);
-            this.txtMaxLine.CustomButton.Name = "";
-            this.txtMaxLine.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtMaxLine.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtMaxLine.CustomButton.TabIndex = 1;
-            this.txtMaxLine.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtMaxLine.CustomButton.UseSelectable = true;
-            this.txtMaxLine.CustomButton.Visible = false;
             this.txtMaxLine.Lines = new string[0];
             this.txtMaxLine.Location = new System.Drawing.Point(172, 45);
             this.txtMaxLine.MaxLength = 32767;
@@ -106,13 +85,10 @@
             this.txtMaxLine.ReadOnly = true;
             this.txtMaxLine.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtMaxLine.SelectedText = "";
-            this.txtMaxLine.SelectionLength = 0;
-            this.txtMaxLine.SelectionStart = 0;
             this.txtMaxLine.Size = new System.Drawing.Size(75, 26);
             this.txtMaxLine.TabIndex = 3;
             this.txtMaxLine.UseSelectable = true;
-            this.txtMaxLine.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtMaxLine.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtMaxLine.Enabled = false;
             // 
             // lblMaxLine
             // 
@@ -128,15 +104,6 @@
             // 
             // 
             // 
-            this.txtGotoLine.CustomButton.Image = null;
-            this.txtGotoLine.CustomButton.Location = new System.Drawing.Point(51, 2);
-            this.txtGotoLine.CustomButton.Name = "";
-            this.txtGotoLine.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtGotoLine.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtGotoLine.CustomButton.TabIndex = 1;
-            this.txtGotoLine.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtGotoLine.CustomButton.UseSelectable = true;
-            this.txtGotoLine.CustomButton.Visible = false;
             this.txtGotoLine.Lines = new string[0];
             this.txtGotoLine.Location = new System.Drawing.Point(172, 77);
             this.txtGotoLine.MaxLength = 32767;
@@ -144,13 +111,9 @@
             this.txtGotoLine.PasswordChar = '\0';
             this.txtGotoLine.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtGotoLine.SelectedText = "";
-            this.txtGotoLine.SelectionLength = 0;
-            this.txtGotoLine.SelectionStart = 0;
             this.txtGotoLine.Size = new System.Drawing.Size(75, 26);
             this.txtGotoLine.TabIndex = 5;
             this.txtGotoLine.UseSelectable = true;
-            this.txtGotoLine.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtGotoLine.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // lblGotoLine
             // 

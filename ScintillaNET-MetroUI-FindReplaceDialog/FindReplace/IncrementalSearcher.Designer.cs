@@ -36,6 +36,7 @@ namespace ScintillaNET_FindReplaceDialog
             this.btnHighlightAll = new MetroFramework.Controls.MetroButton();
             this.btnNext = new MetroFramework.Controls.MetroButton();
             this.btnPrevious = new MetroFramework.Controls.MetroButton();
+            this.toolTip = new MetroFramework.Components.MetroToolTip();
             this.tlpIncrementalSearch.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,11 +78,13 @@ namespace ScintillaNET_FindReplaceDialog
             // 
             this.btnClearHighlights.BackColor = System.Drawing.Color.Transparent;
             this.btnClearHighlights.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClearHighlights.BackgroundImage")));
+            this.btnClearHighlights.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClearHighlights.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnClearHighlights.Location = new System.Drawing.Point(300, 3);
             this.btnClearHighlights.Name = "btnClearHighlights";
-            this.btnClearHighlights.Size = new System.Drawing.Size(27, 27);
+            this.btnClearHighlights.Size = new System.Drawing.Size(23, 23);
             this.btnClearHighlights.TabIndex = 6;
+            this.toolTip.SetToolTip(this.btnClearHighlights, "Clear Highlights");
             this.btnClearHighlights.UseSelectable = true;
             // 
             // txtFind
@@ -89,15 +92,6 @@ namespace ScintillaNET_FindReplaceDialog
             // 
             // 
             // 
-            this.txtFind.CustomButton.Image = null;
-            this.txtFind.CustomButton.Location = new System.Drawing.Point(123, 1);
-            this.txtFind.CustomButton.Name = "";
-            this.txtFind.CustomButton.Size = new System.Drawing.Size(25, 25);
-            this.txtFind.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtFind.CustomButton.TabIndex = 1;
-            this.txtFind.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtFind.CustomButton.UseSelectable = true;
-            this.txtFind.CustomButton.Visible = false;
             this.txtFind.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtFind.Lines = new string[0];
             this.txtFind.Location = new System.Drawing.Point(46, 3);
@@ -106,46 +100,54 @@ namespace ScintillaNET_FindReplaceDialog
             this.txtFind.PasswordChar = '\0';
             this.txtFind.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtFind.SelectedText = "";
-            this.txtFind.SelectionLength = 0;
-            this.txtFind.SelectionStart = 0;
-            this.txtFind.Size = new System.Drawing.Size(149, 27);
+            this.txtFind.Size = new System.Drawing.Size(149, 23);
             this.txtFind.TabIndex = 7;
             this.txtFind.UseSelectable = true;
-            this.txtFind.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtFind.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // btnHighlightAll
             // 
             this.btnHighlightAll.BackColor = System.Drawing.Color.Transparent;
             this.btnHighlightAll.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHighlightAll.BackgroundImage")));
+            this.btnHighlightAll.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHighlightAll.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnHighlightAll.Location = new System.Drawing.Point(267, 3);
             this.btnHighlightAll.Name = "btnHighlightAll";
-            this.btnHighlightAll.Size = new System.Drawing.Size(27, 27);
+            this.btnHighlightAll.Size = new System.Drawing.Size(23, 23);
             this.btnHighlightAll.TabIndex = 5;
+            this.toolTip.SetToolTip(this.btnHighlightAll, "Highlight Matches");
             this.btnHighlightAll.UseSelectable = true;
             // 
             // btnNext
             // 
             this.btnNext.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnNext.BackgroundImage = global::ScintillaNET_FindReplaceDialog.Properties.Resources.next;
+            this.btnNext.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNext.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnNext.Location = new System.Drawing.Point(201, 3);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(27, 27);
+            this.btnNext.Size = new System.Drawing.Size(23, 23);
             this.btnNext.TabIndex = 2;
+            this.toolTip.SetToolTip(this.btnNext, "Next Match");
             this.btnNext.UseSelectable = true;
             // 
             // btnPrevious
             // 
             this.btnPrevious.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnPrevious.BackgroundImage = global::ScintillaNET_FindReplaceDialog.Properties.Resources.previous;
+            this.btnPrevious.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPrevious.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnPrevious.Location = new System.Drawing.Point(234, 3);
             this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(27, 27);
+            this.btnPrevious.Size = new System.Drawing.Size(23, 23);
             this.btnPrevious.TabIndex = 4;
+            this.toolTip.SetToolTip(this.btnPrevious, "Previous Match");
             this.btnPrevious.UseSelectable = true;
+            // 
+            // toolTip
+            // 
+            this.toolTip.Style = MetroFramework.MetroColorStyle.Blue;
+            this.toolTip.StyleManager = null;
+            this.toolTip.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
             // IncrementalSearcher
             // 
@@ -172,5 +174,6 @@ namespace ScintillaNET_FindReplaceDialog
         private MetroFramework.Controls.MetroButton btnHighlightAll;
         private MetroFramework.Controls.MetroButton btnNext;
         private MetroFramework.Controls.MetroButton btnPrevious;
+        private MetroFramework.Components.MetroToolTip toolTip;
     }
 }

@@ -1,3 +1,5 @@
+using System.Drawing.Text;
+
 namespace ScintillaNET_FindReplaceDialog
 {
     using ScintillaNET;
@@ -24,8 +26,12 @@ namespace ScintillaNET_FindReplaceDialog
 
         #region Constructors
 
-        public FindReplaceDialog()
+        public FindReplaceDialog(Scintilla scintilla)
         {
+            if( scintilla == null )
+                throw new ArgumentNullException("scintilla");
+            _scintilla = scintilla;
+
             InitializeComponent();
 
             _autoPosition = true;
@@ -33,6 +39,19 @@ namespace ScintillaNET_FindReplaceDialog
             _mruReplace = new List<string>();
             _bindingSourceFind.DataSource = _mruFind;
             _bindingSourceReplace.DataSource = _mruReplace;
+            this.txtFindF.KeyUp += TxtFindFOnKeyUp;
+        }
+
+        private void TxtFindFOnKeyUp( object sender, KeyEventArgs e )
+        {
+            if (e.Alt && (e.KeyCode == Keys.Enter || e.Alt && e.KeyCode == Keys.Return))
+            {
+                FindNext();
+            }
+            else if ( e.KeyCode == Keys.Enter || e.Alt && e.KeyCode == Keys.Return )
+            {
+                FindAll();
+            }
         }
 
         #endregion Constructors
@@ -126,6 +145,11 @@ namespace ScintillaNET_FindReplaceDialog
         }
 
         private void btnFindAll_Click(object sender, EventArgs e)
+        {
+            FindAll();
+        }
+
+        private void FindAll()
         {
             if (txtFindF.Text == string.Empty)
                 return;
@@ -390,50 +414,12 @@ namespace ScintillaNET_FindReplaceDialog
             mnuRecentReplace.Show(cmdRecentReplace.PointToScreen(cmdRecentReplace.ClientRectangle.Location));
         }
 
-        private void cmdExtendedCharFindF_Click(object sender, EventArgs e)
-        {
-            if (rdoExtendedF.Checked)
-            {
-                mnuExtendedCharFindF.Show(cmdExtCharAndRegExFindF.PointToScreen(cmdExtCharAndRegExFindF.ClientRectangle.Location));
-            }
-            else if (rdoRegexF.Checked)
-            {
-                mnuRegExCharFindF.Show(cmdExtCharAndRegExFindF.PointToScreen(cmdExtCharAndRegExFindF.ClientRectangle.Location));
-            }
-        }
-
-        private void cmdExtendedCharFindR_Click(object sender, EventArgs e)
-        {
-            if (rdoExtendedR.Checked)
-            {
-                mnuExtendedCharFindR.Show(cmdExtCharAndRegExFindR.PointToScreen(cmdExtCharAndRegExFindR.ClientRectangle.Location));
-            }
-            else if (rdoRegexR.Checked)
-            {
-                mnuRegExCharFindR.Show(cmdExtCharAndRegExFindR.PointToScreen(cmdExtCharAndRegExFindR.ClientRectangle.Location));
-            }
-        }
-
-        private void cmdExtendedCharReplace_Click(object sender, EventArgs e)
-        {
-            if (rdoExtendedR.Checked)
-            {
-                mnuExtendedCharReplace.Show(cmdExtCharAndRegExReplace.PointToScreen(cmdExtCharAndRegExReplace.ClientRectangle.Location));
-            }
-            else if (rdoRegexR.Checked)
-            {
-                mnuRegExCharReplace.Show(cmdExtCharAndRegExReplace.PointToScreen(cmdExtCharAndRegExReplace.ClientRectangle.Location));
-            }
-        }
-
         private void rdoStandardF_CheckedChanged(object sender, EventArgs e)
         {
             if (rdoStandardF.Checked)
                 pnlStandardOptionsF.BringToFront();
             else
                 pnlRegexpOptionsF.BringToFront();
-
-            cmdExtCharAndRegExFindF.Enabled = !rdoStandardF.Checked;
         }
 
         private void rdoStandardR_CheckedChanged(object sender, EventArgs e)
@@ -442,9 +428,6 @@ namespace ScintillaNET_FindReplaceDialog
                 pnlStandardOptionsR.BringToFront();
             else
                 pnlRegexpOptionsR.BringToFront();
-
-            cmdExtCharAndRegExFindR.Enabled = !rdoStandardR.Checked;
-            cmdExtCharAndRegExReplace.Enabled = !rdoStandardR.Checked;
         }
 
         private void tabAll_SelectedIndexChanged(object sender, EventArgs e)

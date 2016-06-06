@@ -34,7 +34,6 @@ namespace ScintillaNET_FindReplaceDialog
             this.tpgFind = new MetroFramework.Controls.MetroTabPage();
             this.cmdRecentFindF = new MetroFramework.Controls.MetroButton();
             this.txtFindF = new MetroFramework.Controls.MetroTextBox();
-            this.cmdExtCharAndRegExFindF = new MetroFramework.Controls.MetroButton();
             this.rdoExtendedF = new System.Windows.Forms.RadioButton();
             this.grpFindAll = new System.Windows.Forms.GroupBox();
             this.btnClear = new MetroFramework.Controls.MetroButton();
@@ -67,8 +66,6 @@ namespace ScintillaNET_FindReplaceDialog
             this.tpgReplace = new MetroFramework.Controls.MetroTabPage();
             this.txtReplace = new MetroFramework.Controls.MetroTextBox();
             this.txtFindR = new MetroFramework.Controls.MetroTextBox();
-            this.cmdExtCharAndRegExReplace = new MetroFramework.Controls.MetroButton();
-            this.cmdExtCharAndRegExFindR = new MetroFramework.Controls.MetroButton();
             this.rdoExtendedR = new System.Windows.Forms.RadioButton();
             this.btnReplaceAll = new MetroFramework.Controls.MetroButton();
             this.lblReplace = new MetroFramework.Controls.MetroLabel();
@@ -205,8 +202,8 @@ namespace ScintillaNET_FindReplaceDialog
             this.tabAll.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabAll.Location = new System.Drawing.Point(0, 0);
             this.tabAll.Name = "tabAll";
-            this.tabAll.SelectedIndex = 0;
-            this.tabAll.Size = new System.Drawing.Size(676, 307);
+            this.tabAll.SelectedIndex = 1;
+            this.tabAll.Size = new System.Drawing.Size(676, 273);
             this.tabAll.TabIndex = 0;
             this.tabAll.UseSelectable = true;
             this.tabAll.SelectedIndexChanged += new System.EventHandler(this.tabAll_SelectedIndexChanged);
@@ -215,7 +212,6 @@ namespace ScintillaNET_FindReplaceDialog
             // 
             this.tpgFind.Controls.Add(this.cmdRecentFindF);
             this.tpgFind.Controls.Add(this.txtFindF);
-            this.tpgFind.Controls.Add(this.cmdExtCharAndRegExFindF);
             this.tpgFind.Controls.Add(this.rdoExtendedF);
             this.tpgFind.Controls.Add(this.grpFindAll);
             this.tpgFind.Controls.Add(this.chkSearchSelectionF);
@@ -245,7 +241,7 @@ namespace ScintillaNET_FindReplaceDialog
             // 
             this.cmdRecentFindF.BackgroundImage = global::ScintillaNET_FindReplaceDialog.Properties.Resources.recent__Custom_;
             this.cmdRecentFindF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.cmdRecentFindF.Location = new System.Drawing.Point(604, 6);
+            this.cmdRecentFindF.Location = new System.Drawing.Point(638, 6);
             this.cmdRecentFindF.Name = "cmdRecentFindF";
             this.cmdRecentFindF.Size = new System.Drawing.Size(26, 26);
             this.cmdRecentFindF.TabIndex = 14;
@@ -260,42 +256,16 @@ namespace ScintillaNET_FindReplaceDialog
             // 
             // 
             // 
-            this.txtFindF.CustomButton.Image = null;
-            this.txtFindF.CustomButton.Location = new System.Drawing.Point(263, 2);
-            this.txtFindF.CustomButton.Name = "";
-            this.txtFindF.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtFindF.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtFindF.CustomButton.TabIndex = 1;
-            this.txtFindF.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtFindF.CustomButton.UseSelectable = true;
-            this.txtFindF.CustomButton.Visible = false;
             this.txtFindF.Lines = new string[0];
-            this.txtFindF.Location = new System.Drawing.Point(59, 6);
+            this.txtFindF.Location = new System.Drawing.Point(57, 6);
             this.txtFindF.MaxLength = 32767;
             this.txtFindF.Name = "txtFindF";
             this.txtFindF.PasswordChar = '\0';
             this.txtFindF.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtFindF.SelectedText = "";
-            this.txtFindF.SelectionLength = 0;
-            this.txtFindF.SelectionStart = 0;
-            this.txtFindF.Size = new System.Drawing.Size(287, 26);
+            this.txtFindF.Size = new System.Drawing.Size(575, 26);
             this.txtFindF.TabIndex = 13;
             this.txtFindF.UseSelectable = true;
-            this.txtFindF.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtFindF.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // cmdExtCharAndRegExFindF
-            // 
-            this.cmdExtCharAndRegExFindF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmdExtCharAndRegExFindF.BackgroundImage = global::ScintillaNET_FindReplaceDialog.Properties.Resources.go__Custom_;
-            this.cmdExtCharAndRegExFindF.Enabled = false;
-            this.cmdExtCharAndRegExFindF.Location = new System.Drawing.Point(636, 6);
-            this.cmdExtCharAndRegExFindF.Name = "cmdExtCharAndRegExFindF";
-            this.cmdExtCharAndRegExFindF.Size = new System.Drawing.Size(26, 26);
-            this.cmdExtCharAndRegExFindF.TabIndex = 12;
-            this.toolTip1.SetToolTip(this.cmdExtCharAndRegExFindF, "Show a list of extended characters");
-            this.cmdExtCharAndRegExFindF.UseSelectable = true;
-            this.cmdExtCharAndRegExFindF.Click += new System.EventHandler(this.cmdExtendedCharFindF_Click);
             // 
             // rdoExtendedF
             // 
@@ -613,8 +583,6 @@ namespace ScintillaNET_FindReplaceDialog
             // 
             this.tpgReplace.Controls.Add(this.txtReplace);
             this.tpgReplace.Controls.Add(this.txtFindR);
-            this.tpgReplace.Controls.Add(this.cmdExtCharAndRegExReplace);
-            this.tpgReplace.Controls.Add(this.cmdExtCharAndRegExFindR);
             this.tpgReplace.Controls.Add(this.rdoExtendedR);
             this.tpgReplace.Controls.Add(this.btnReplaceAll);
             this.tpgReplace.Controls.Add(this.lblReplace);
@@ -635,7 +603,7 @@ namespace ScintillaNET_FindReplaceDialog
             this.tpgReplace.Location = new System.Drawing.Point(4, 38);
             this.tpgReplace.Name = "tpgReplace";
             this.tpgReplace.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgReplace.Size = new System.Drawing.Size(668, 265);
+            this.tpgReplace.Size = new System.Drawing.Size(668, 231);
             this.tpgReplace.TabIndex = 1;
             this.tpgReplace.Text = "Replace";
             this.tpgReplace.UseVisualStyleBackColor = true;
@@ -650,29 +618,16 @@ namespace ScintillaNET_FindReplaceDialog
             // 
             // 
             // 
-            this.txtReplace.CustomButton.Image = null;
-            this.txtReplace.CustomButton.Location = new System.Drawing.Point(350, 1);
-            this.txtReplace.CustomButton.Name = "";
-            this.txtReplace.CustomButton.Size = new System.Drawing.Size(19, 19);
-            this.txtReplace.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtReplace.CustomButton.TabIndex = 1;
-            this.txtReplace.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtReplace.CustomButton.UseSelectable = true;
-            this.txtReplace.CustomButton.Visible = false;
             this.txtReplace.Lines = new string[0];
-            this.txtReplace.Location = new System.Drawing.Point(59, 28);
+            this.txtReplace.Location = new System.Drawing.Point(59, 38);
             this.txtReplace.MaxLength = 32767;
             this.txtReplace.Name = "txtReplace";
             this.txtReplace.PasswordChar = '\0';
             this.txtReplace.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtReplace.SelectedText = "";
-            this.txtReplace.SelectionLength = 0;
-            this.txtReplace.SelectionStart = 0;
-            this.txtReplace.Size = new System.Drawing.Size(370, 21);
+            this.txtReplace.Size = new System.Drawing.Size(547, 26);
             this.txtReplace.TabIndex = 20;
             this.txtReplace.UseSelectable = true;
-            this.txtReplace.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtReplace.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // txtFindR
             // 
@@ -681,15 +636,6 @@ namespace ScintillaNET_FindReplaceDialog
             // 
             // 
             // 
-            this.txtFindR.CustomButton.Image = null;
-            this.txtFindR.CustomButton.Location = new System.Drawing.Point(350, 1);
-            this.txtFindR.CustomButton.Name = "";
-            this.txtFindR.CustomButton.Size = new System.Drawing.Size(19, 19);
-            this.txtFindR.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtFindR.CustomButton.TabIndex = 1;
-            this.txtFindR.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtFindR.CustomButton.UseSelectable = true;
-            this.txtFindR.CustomButton.Visible = false;
             this.txtFindR.Lines = new string[0];
             this.txtFindR.Location = new System.Drawing.Point(59, 6);
             this.txtFindR.MaxLength = 32767;
@@ -697,44 +643,14 @@ namespace ScintillaNET_FindReplaceDialog
             this.txtFindR.PasswordChar = '\0';
             this.txtFindR.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtFindR.SelectedText = "";
-            this.txtFindR.SelectionLength = 0;
-            this.txtFindR.SelectionStart = 0;
-            this.txtFindR.Size = new System.Drawing.Size(370, 21);
+            this.txtFindR.Size = new System.Drawing.Size(547, 26);
             this.txtFindR.TabIndex = 19;
             this.txtFindR.UseSelectable = true;
-            this.txtFindR.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtFindR.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // cmdExtCharAndRegExReplace
-            // 
-            this.cmdExtCharAndRegExReplace.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmdExtCharAndRegExReplace.Enabled = false;
-            this.cmdExtCharAndRegExReplace.Location = new System.Drawing.Point(453, 27);
-            this.cmdExtCharAndRegExReplace.Name = "cmdExtCharAndRegExReplace";
-            this.cmdExtCharAndRegExReplace.Size = new System.Drawing.Size(23, 23);
-            this.cmdExtCharAndRegExReplace.TabIndex = 17;
-            this.cmdExtCharAndRegExReplace.Text = ">";
-            this.toolTip1.SetToolTip(this.cmdExtCharAndRegExReplace, "Show a list of extended characters");
-            this.cmdExtCharAndRegExReplace.UseSelectable = true;
-            this.cmdExtCharAndRegExReplace.Click += new System.EventHandler(this.cmdExtendedCharReplace_Click);
-            // 
-            // cmdExtCharAndRegExFindR
-            // 
-            this.cmdExtCharAndRegExFindR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmdExtCharAndRegExFindR.Enabled = false;
-            this.cmdExtCharAndRegExFindR.Location = new System.Drawing.Point(453, 5);
-            this.cmdExtCharAndRegExFindR.Name = "cmdExtCharAndRegExFindR";
-            this.cmdExtCharAndRegExFindR.Size = new System.Drawing.Size(23, 23);
-            this.cmdExtCharAndRegExFindR.TabIndex = 15;
-            this.cmdExtCharAndRegExFindR.Text = ">";
-            this.toolTip1.SetToolTip(this.cmdExtCharAndRegExFindR, "Show a list of extended characters");
-            this.cmdExtCharAndRegExFindR.UseSelectable = true;
-            this.cmdExtCharAndRegExFindR.Click += new System.EventHandler(this.cmdExtendedCharFindR_Click);
             // 
             // rdoExtendedR
             // 
             this.rdoExtendedR.AutoSize = true;
-            this.rdoExtendedR.Location = new System.Drawing.Point(102, 71);
+            this.rdoExtendedR.Location = new System.Drawing.Point(103, 95);
             this.rdoExtendedR.Name = "rdoExtendedR";
             this.rdoExtendedR.Size = new System.Drawing.Size(139, 17);
             this.rdoExtendedR.TabIndex = 13;
@@ -743,9 +659,9 @@ namespace ScintillaNET_FindReplaceDialog
             // 
             // btnReplaceAll
             // 
-            this.btnReplaceAll.Location = new System.Drawing.Point(7, 212);
+            this.btnReplaceAll.Location = new System.Drawing.Point(534, 198);
             this.btnReplaceAll.Name = "btnReplaceAll";
-            this.btnReplaceAll.Size = new System.Drawing.Size(107, 23);
+            this.btnReplaceAll.Size = new System.Drawing.Size(107, 26);
             this.btnReplaceAll.TabIndex = 10;
             this.btnReplaceAll.Text = "Replace &All";
             this.btnReplaceAll.UseSelectable = true;
@@ -754,7 +670,7 @@ namespace ScintillaNET_FindReplaceDialog
             // lblReplace
             // 
             this.lblReplace.AutoSize = true;
-            this.lblReplace.Location = new System.Drawing.Point(8, 32);
+            this.lblReplace.Location = new System.Drawing.Point(3, 41);
             this.lblReplace.Name = "lblReplace";
             this.lblReplace.Size = new System.Drawing.Size(55, 19);
             this.lblReplace.TabIndex = 2;
@@ -763,7 +679,7 @@ namespace ScintillaNET_FindReplaceDialog
             // chkSearchSelectionR
             // 
             this.chkSearchSelectionR.AutoSize = true;
-            this.chkSearchSelectionR.Location = new System.Drawing.Point(375, 71);
+            this.chkSearchSelectionR.Location = new System.Drawing.Point(376, 95);
             this.chkSearchSelectionR.Name = "chkSearchSelectionR";
             this.chkSearchSelectionR.Size = new System.Drawing.Size(109, 15);
             this.chkSearchSelectionR.TabIndex = 8;
@@ -775,7 +691,7 @@ namespace ScintillaNET_FindReplaceDialog
             this.chkWrapR.AutoSize = true;
             this.chkWrapR.Checked = true;
             this.chkWrapR.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkWrapR.Location = new System.Drawing.Point(375, 52);
+            this.chkWrapR.Location = new System.Drawing.Point(376, 76);
             this.chkWrapR.Name = "chkWrapR";
             this.chkWrapR.Size = new System.Drawing.Size(51, 15);
             this.chkWrapR.TabIndex = 7;
@@ -785,9 +701,9 @@ namespace ScintillaNET_FindReplaceDialog
             // btnReplacePrevious
             // 
             this.btnReplacePrevious.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReplacePrevious.Location = new System.Drawing.Point(364, 188);
+            this.btnReplacePrevious.Location = new System.Drawing.Point(8, 201);
             this.btnReplacePrevious.Name = "btnReplacePrevious";
-            this.btnReplacePrevious.Size = new System.Drawing.Size(107, 23);
+            this.btnReplacePrevious.Size = new System.Drawing.Size(107, 26);
             this.btnReplacePrevious.TabIndex = 11;
             this.btnReplacePrevious.Text = "Replace &Previous";
             this.btnReplacePrevious.UseSelectable = true;
@@ -796,9 +712,9 @@ namespace ScintillaNET_FindReplaceDialog
             // btnReplaceNext
             // 
             this.btnReplaceNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReplaceNext.Location = new System.Drawing.Point(364, 212);
+            this.btnReplaceNext.Location = new System.Drawing.Point(121, 201);
             this.btnReplaceNext.Name = "btnReplaceNext";
-            this.btnReplaceNext.Size = new System.Drawing.Size(107, 23);
+            this.btnReplaceNext.Size = new System.Drawing.Size(107, 26);
             this.btnReplaceNext.TabIndex = 12;
             this.btnReplaceNext.Text = "Replace &Next";
             this.btnReplaceNext.UseSelectable = true;
@@ -810,9 +726,9 @@ namespace ScintillaNET_FindReplaceDialog
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grdOptionsR.Controls.Add(this.pnlStandardOptionsR);
             this.grdOptionsR.Controls.Add(this.pnlRegexpOptionsR);
-            this.grdOptionsR.Location = new System.Drawing.Point(4, 94);
+            this.grdOptionsR.Location = new System.Drawing.Point(5, 118);
             this.grdOptionsR.Name = "grdOptionsR";
-            this.grdOptionsR.Size = new System.Drawing.Size(470, 77);
+            this.grdOptionsR.Size = new System.Drawing.Size(636, 77);
             this.grdOptionsR.TabIndex = 9;
             this.grdOptionsR.TabStop = false;
             this.grdOptionsR.Text = "Options";
@@ -825,7 +741,7 @@ namespace ScintillaNET_FindReplaceDialog
             this.pnlStandardOptionsR.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlStandardOptionsR.Location = new System.Drawing.Point(3, 17);
             this.pnlStandardOptionsR.Name = "pnlStandardOptionsR";
-            this.pnlStandardOptionsR.Size = new System.Drawing.Size(464, 57);
+            this.pnlStandardOptionsR.Size = new System.Drawing.Size(630, 57);
             this.pnlStandardOptionsR.TabIndex = 0;
             // 
             // chkWordStartR
@@ -872,7 +788,7 @@ namespace ScintillaNET_FindReplaceDialog
             this.pnlRegexpOptionsR.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlRegexpOptionsR.Location = new System.Drawing.Point(3, 17);
             this.pnlRegexpOptionsR.Name = "pnlRegexpOptionsR";
-            this.pnlRegexpOptionsR.Size = new System.Drawing.Size(464, 57);
+            this.pnlRegexpOptionsR.Size = new System.Drawing.Size(630, 57);
             this.pnlRegexpOptionsR.TabIndex = 1;
             // 
             // chkSinglelineR
@@ -969,7 +885,7 @@ namespace ScintillaNET_FindReplaceDialog
             // lblSearchTypeR
             // 
             this.lblSearchTypeR.AutoSize = true;
-            this.lblSearchTypeR.Location = new System.Drawing.Point(8, 52);
+            this.lblSearchTypeR.Location = new System.Drawing.Point(9, 76);
             this.lblSearchTypeR.Name = "lblSearchTypeR";
             this.lblSearchTypeR.Size = new System.Drawing.Size(79, 19);
             this.lblSearchTypeR.TabIndex = 4;
@@ -978,7 +894,7 @@ namespace ScintillaNET_FindReplaceDialog
             // rdoRegexR
             // 
             this.rdoRegexR.AutoSize = true;
-            this.rdoRegexR.Location = new System.Drawing.Point(247, 71);
+            this.rdoRegexR.Location = new System.Drawing.Point(248, 95);
             this.rdoRegexR.Name = "rdoRegexR";
             this.rdoRegexR.Size = new System.Drawing.Size(117, 17);
             this.rdoRegexR.TabIndex = 6;
@@ -990,7 +906,7 @@ namespace ScintillaNET_FindReplaceDialog
             // 
             this.rdoStandardR.AutoSize = true;
             this.rdoStandardR.Checked = true;
-            this.rdoStandardR.Location = new System.Drawing.Point(27, 71);
+            this.rdoStandardR.Location = new System.Drawing.Point(28, 95);
             this.rdoStandardR.Name = "rdoStandardR";
             this.rdoStandardR.Size = new System.Drawing.Size(69, 17);
             this.rdoStandardR.TabIndex = 5;
@@ -1012,11 +928,11 @@ namespace ScintillaNET_FindReplaceDialog
             // 
             this.cmdRecentReplace.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdRecentReplace.BackColor = System.Drawing.Color.Transparent;
-            this.cmdRecentReplace.BackgroundImage = Properties.Resources.recent__Custom_;
+            this.cmdRecentReplace.BackgroundImage = global::ScintillaNET_FindReplaceDialog.Properties.Resources.recent__Custom_;
             this.cmdRecentReplace.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.cmdRecentReplace.Location = new System.Drawing.Point(430, 27);
+            this.cmdRecentReplace.Location = new System.Drawing.Point(612, 38);
             this.cmdRecentReplace.Name = "cmdRecentReplace";
-            this.cmdRecentReplace.Size = new System.Drawing.Size(23, 23);
+            this.cmdRecentReplace.Size = new System.Drawing.Size(26, 26);
             this.cmdRecentReplace.TabIndex = 18;
             this.toolTip1.SetToolTip(this.cmdRecentReplace, "Show a list of recent search strings");
             this.cmdRecentReplace.UseSelectable = true;
@@ -1025,10 +941,11 @@ namespace ScintillaNET_FindReplaceDialog
             // cmdRecentFindR
             // 
             this.cmdRecentFindR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdRecentFindR.BackgroundImage = global::ScintillaNET_FindReplaceDialog.Properties.Resources.recent__Custom_;
             this.cmdRecentFindR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.cmdRecentFindR.Location = new System.Drawing.Point(430, 5);
+            this.cmdRecentFindR.Location = new System.Drawing.Point(612, 6);
             this.cmdRecentFindR.Name = "cmdRecentFindR";
-            this.cmdRecentFindR.Size = new System.Drawing.Size(23, 23);
+            this.cmdRecentFindR.Size = new System.Drawing.Size(26, 26);
             this.cmdRecentFindR.TabIndex = 16;
             this.toolTip1.SetToolTip(this.cmdRecentFindR, "Show a list of recent search strings");
             this.cmdRecentFindR.UseSelectable = true;
@@ -1038,7 +955,7 @@ namespace ScintillaNET_FindReplaceDialog
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblStatus});
-            this.statusStrip.Location = new System.Drawing.Point(0, 307);
+            this.statusStrip.Location = new System.Drawing.Point(0, 273);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Size = new System.Drawing.Size(676, 22);
             this.statusStrip.TabIndex = 1;
@@ -1664,7 +1581,7 @@ namespace ScintillaNET_FindReplaceDialog
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(676, 329);
+            this.ClientSize = new System.Drawing.Size(676, 295);
             this.Controls.Add(this.tabAll);
             this.Controls.Add(this.statusStrip);
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1673,7 +1590,7 @@ namespace ScintillaNET_FindReplaceDialog
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(504, 331);
+            this.MinimumSize = new System.Drawing.Size(504, 360);
             this.Name = "FindReplaceDialog";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
@@ -1856,11 +1773,8 @@ namespace ScintillaNET_FindReplaceDialog
         private MetroFramework.Controls.MetroButton btnReplacePrevious;
         private MetroFramework.Controls.MetroButton btnReplaceNext;
         private MetroFramework.Controls.MetroButton btnReplaceAll;
-        private MetroFramework.Controls.MetroButton cmdExtCharAndRegExFindF;
         private MetroFramework.Controls.MetroButton cmdRecentFindF;
         private MetroFramework.Controls.MetroButton cmdRecentReplace;
-        private MetroFramework.Controls.MetroButton cmdExtCharAndRegExReplace;
         private MetroFramework.Controls.MetroButton cmdRecentFindR;
-        private MetroFramework.Controls.MetroButton cmdExtCharAndRegExFindR;
     }
 }

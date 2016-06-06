@@ -45,15 +45,26 @@ namespace ScintillaNET_FindReplaceDialog
         /// <param name="scintilla">The Scintilla class to which the FindReplace class is attached.</param>
         public FindReplace(Scintilla scintilla)
         {
-            Scintilla = scintilla;
-        }
+            _scintilla = scintilla;
 
-        /// <summary>
-        /// Creates an instance of the FindReplace class.
-        /// </summary>
-        public FindReplace()
-        {
+            _marker = _scintilla.Markers[10];
+            _marker.Symbol = MarkerSymbol.Circle;
+            _marker.SetForeColor(Color.Black);
+            _marker.SetBackColor(Color.Blue);
+            _indicator = _scintilla.Indicators[16];
+            _indicator.ForeColor = Color.Red;
+            //_indicator.ForeColor = Color.LawnGreen; //Smart highlight
+            _indicator.Alpha = 100;
+            _indicator.Style = IndicatorStyle.RoundBox;
+            _indicator.Under = true;
 
+            _window = CreateWindowInstance();
+            _window.FindReplace = this;
+
+            _incrementalSearcher = CreateIncrementalSearcherInstance();
+            _incrementalSearcher.FindReplace = this;
+            _incrementalSearcher.Visible = false;
+            _scintilla.Controls.Add(_incrementalSearcher);
         }
 
         #endregion Constructors
@@ -69,30 +80,6 @@ namespace ScintillaNET_FindReplaceDialog
             get
             {
                 return _scintilla;
-            }
-            set
-            {
-                _scintilla = value;
-                _marker = _scintilla.Markers[10];
-                _marker.Symbol = MarkerSymbol.Circle;
-                _marker.SetForeColor(Color.Black);
-                _marker.SetBackColor(Color.Blue);
-                _indicator = _scintilla.Indicators[16];
-                _indicator.ForeColor = Color.Red;
-                //_indicator.ForeColor = Color.LawnGreen; //Smart highlight
-                _indicator.Alpha = 100;
-                _indicator.Style = IndicatorStyle.RoundBox;
-                _indicator.Under = true;
-
-                _window = CreateWindowInstance();
-                _window.Scintilla = _scintilla;
-                _window.FindReplace = this;
-
-                _incrementalSearcher = CreateIncrementalSearcherInstance();
-                _incrementalSearcher.Scintilla = _scintilla;
-                _incrementalSearcher.FindReplace = this;
-                _incrementalSearcher.Visible = false;
-                _scintilla.Controls.Add(_incrementalSearcher);
             }
         }
 
@@ -872,7 +859,7 @@ namespace ScintillaNET_FindReplaceDialog
         [EditorBrowsable(EditorBrowsableState.Advanced)]
         protected virtual IncrementalSearcher CreateIncrementalSearcherInstance()
         {
-            return new IncrementalSearcher();
+            return new IncrementalSearcher( this._scintilla );
         }
 
         /// <summary>
@@ -882,7 +869,7 @@ namespace ScintillaNET_FindReplaceDialog
         [EditorBrowsable(EditorBrowsableState.Advanced)]
         protected virtual FindReplaceDialog CreateWindowInstance()
         {
-            return new FindReplaceDialog();
+            return new FindReplaceDialog( this._scintilla );
         }
 
         private string ReplaceAllEvaluator(Match m)
