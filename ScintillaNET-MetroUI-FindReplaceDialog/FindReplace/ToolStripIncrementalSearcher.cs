@@ -31,6 +31,11 @@ namespace ScintillaNET_FindReplaceDialog
 
         #region Constructors
 
+        public ToolStripIncrementalSearcher(Scintilla scintilla) : base(new IncrementalSearcher(true))
+        {
+            this.Scintilla = scintilla;
+        }
+
         public ToolStripIncrementalSearcher() : base(new IncrementalSearcher(true))
         {
         }

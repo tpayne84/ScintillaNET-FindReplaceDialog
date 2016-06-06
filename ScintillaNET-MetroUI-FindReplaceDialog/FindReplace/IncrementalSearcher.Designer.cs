@@ -28,153 +28,149 @@ namespace ScintillaNET_FindReplaceDialog
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.lblFind = new System.Windows.Forms.Label();
-            this.txtFind = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnNext = new System.Windows.Forms.Button();
-            this.brnPrevious = new System.Windows.Forms.Button();
-            this.btnHighlightAll = new System.Windows.Forms.Button();
-            this.btnClearHighlights = new System.Windows.Forms.Button();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.flowLayoutPanel1.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IncrementalSearcher));
+            this.tlpIncrementalSearch = new System.Windows.Forms.TableLayoutPanel();
+            this.lblFind = new MetroFramework.Controls.MetroLabel();
+            this.btnClearHighlights = new MetroFramework.Controls.MetroButton();
+            this.txtFind = new MetroFramework.Controls.MetroTextBox();
+            this.btnHighlightAll = new MetroFramework.Controls.MetroButton();
+            this.btnNext = new MetroFramework.Controls.MetroButton();
+            this.btnPrevious = new MetroFramework.Controls.MetroButton();
+            this.tlpIncrementalSearch.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // tlpIncrementalSearch
+            // 
+            this.tlpIncrementalSearch.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tlpIncrementalSearch.ColumnCount = 6;
+            this.tlpIncrementalSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tlpIncrementalSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpIncrementalSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tlpIncrementalSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tlpIncrementalSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tlpIncrementalSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tlpIncrementalSearch.Controls.Add(this.lblFind, 0, 0);
+            this.tlpIncrementalSearch.Controls.Add(this.btnClearHighlights, 5, 0);
+            this.tlpIncrementalSearch.Controls.Add(this.txtFind, 1, 0);
+            this.tlpIncrementalSearch.Controls.Add(this.btnHighlightAll, 4, 0);
+            this.tlpIncrementalSearch.Controls.Add(this.btnNext, 2, 0);
+            this.tlpIncrementalSearch.Controls.Add(this.btnPrevious, 3, 0);
+            this.tlpIncrementalSearch.Location = new System.Drawing.Point(3, 0);
+            this.tlpIncrementalSearch.Name = "tlpIncrementalSearch";
+            this.tlpIncrementalSearch.RowCount = 1;
+            this.tlpIncrementalSearch.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tlpIncrementalSearch.Size = new System.Drawing.Size(330, 32);
+            this.tlpIncrementalSearch.TabIndex = 9;
             // 
             // lblFind
             // 
             this.lblFind.AutoSize = true;
-            this.lblFind.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblFind.Location = new System.Drawing.Point(0, 0);
-            this.lblFind.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.lblFind.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblFind.Location = new System.Drawing.Point(3, 0);
             this.lblFind.Name = "lblFind";
-            this.lblFind.Size = new System.Drawing.Size(27, 22);
-            this.lblFind.TabIndex = 0;
-            this.lblFind.Text = "&Find";
-            this.lblFind.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtFind
-            // 
-            this.txtFind.Location = new System.Drawing.Point(33, 1);
-            this.txtFind.Margin = new System.Windows.Forms.Padding(3, 1, 0, 0);
-            this.txtFind.Name = "txtFind";
-            this.txtFind.Size = new System.Drawing.Size(135, 20);
-            this.txtFind.TabIndex = 1;
-            this.txtFind.TextChanged += new System.EventHandler(this.txtFind_TextChanged);
-            this.txtFind.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtFind_KeyDown);
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel1.Controls.Add(this.lblFind);
-            this.flowLayoutPanel1.Controls.Add(this.txtFind);
-            this.flowLayoutPanel1.Controls.Add(this.btnNext);
-            this.flowLayoutPanel1.Controls.Add(this.brnPrevious);
-            this.flowLayoutPanel1.Controls.Add(this.btnHighlightAll);
-            this.flowLayoutPanel1.Controls.Add(this.btnClearHighlights);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(259, 22);
-            this.flowLayoutPanel1.TabIndex = 4;
-            this.flowLayoutPanel1.WrapContents = false;
-            // 
-            // btnNext
-            // 
-            this.btnNext.AutoSize = true;
-            this.btnNext.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnNext.BackgroundImage = global::ScintillaNET_FindReplaceDialog.Properties.Resources.GoToNextMessage;
-            this.btnNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnNext.FlatAppearance.BorderSize = 0;
-            this.btnNext.Image = global::ScintillaNET_FindReplaceDialog.Properties.Resources.GoToNextMessage;
-            this.btnNext.Location = new System.Drawing.Point(171, 0);
-            this.btnNext.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(22, 22);
-            this.btnNext.TabIndex = 2;
-            this.toolTip.SetToolTip(this.btnNext, "Find Next");
-            this.btnNext.UseVisualStyleBackColor = true;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
-            // 
-            // brnPrevious
-            // 
-            this.brnPrevious.AutoSize = true;
-            this.brnPrevious.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.brnPrevious.FlatAppearance.BorderSize = 0;
-            this.brnPrevious.Image = global::ScintillaNET_FindReplaceDialog.Properties.Resources.GoToPreviousMessage;
-            this.brnPrevious.Location = new System.Drawing.Point(193, 0);
-            this.brnPrevious.Margin = new System.Windows.Forms.Padding(0);
-            this.brnPrevious.Name = "brnPrevious";
-            this.brnPrevious.Size = new System.Drawing.Size(22, 22);
-            this.brnPrevious.TabIndex = 3;
-            this.toolTip.SetToolTip(this.brnPrevious, "Find Previous");
-            this.brnPrevious.UseVisualStyleBackColor = true;
-            this.brnPrevious.Click += new System.EventHandler(this.brnPrevious_Click);
-            // 
-            // btnHighlightAll
-            // 
-            this.btnHighlightAll.AutoSize = true;
-            this.btnHighlightAll.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnHighlightAll.BackgroundImage = global::ScintillaNET_FindReplaceDialog.Properties.Resources.LineColorHS;
-            this.btnHighlightAll.FlatAppearance.BorderSize = 0;
-            this.btnHighlightAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHighlightAll.ForeColor = System.Drawing.Color.SkyBlue;
-            this.btnHighlightAll.Image = global::ScintillaNET_FindReplaceDialog.Properties.Resources.LineColorHS;
-            this.btnHighlightAll.Location = new System.Drawing.Point(215, 0);
-            this.btnHighlightAll.Margin = new System.Windows.Forms.Padding(0);
-            this.btnHighlightAll.Name = "btnHighlightAll";
-            this.btnHighlightAll.Size = new System.Drawing.Size(22, 22);
-            this.btnHighlightAll.TabIndex = 4;
-            this.btnHighlightAll.Text = "&h";
-            this.toolTip.SetToolTip(this.btnHighlightAll, "Highlight All Matches (ALT+H)");
-            this.btnHighlightAll.UseVisualStyleBackColor = true;
-            this.btnHighlightAll.Click += new System.EventHandler(this.btnHighlightAll_Click);
+            this.lblFind.Size = new System.Drawing.Size(37, 33);
+            this.lblFind.TabIndex = 3;
+            this.lblFind.Text = "Find";
+            this.lblFind.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnClearHighlights
             // 
-            this.btnClearHighlights.AutoSize = true;
-            this.btnClearHighlights.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnClearHighlights.FlatAppearance.BorderSize = 0;
-            this.btnClearHighlights.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClearHighlights.Image = global::ScintillaNET_FindReplaceDialog.Properties.Resources.DeleteHS;
-            this.btnClearHighlights.Location = new System.Drawing.Point(237, 0);
-            this.btnClearHighlights.Margin = new System.Windows.Forms.Padding(0);
+            this.btnClearHighlights.BackColor = System.Drawing.Color.Transparent;
+            this.btnClearHighlights.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClearHighlights.BackgroundImage")));
+            this.btnClearHighlights.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnClearHighlights.Location = new System.Drawing.Point(300, 3);
             this.btnClearHighlights.Name = "btnClearHighlights";
-            this.btnClearHighlights.Size = new System.Drawing.Size(22, 22);
-            this.btnClearHighlights.TabIndex = 5;
-            this.btnClearHighlights.Text = "&j";
-            this.toolTip.SetToolTip(this.btnClearHighlights, "Clear Highlights (ALT+J)");
-            this.btnClearHighlights.UseVisualStyleBackColor = true;
-            this.btnClearHighlights.Click += new System.EventHandler(this.btnClearHighlights_Click);
+            this.btnClearHighlights.Size = new System.Drawing.Size(27, 27);
+            this.btnClearHighlights.TabIndex = 6;
+            this.btnClearHighlights.UseSelectable = true;
+            // 
+            // txtFind
+            // 
+            // 
+            // 
+            // 
+            this.txtFind.CustomButton.Image = null;
+            this.txtFind.CustomButton.Location = new System.Drawing.Point(123, 1);
+            this.txtFind.CustomButton.Name = "";
+            this.txtFind.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.txtFind.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtFind.CustomButton.TabIndex = 1;
+            this.txtFind.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtFind.CustomButton.UseSelectable = true;
+            this.txtFind.CustomButton.Visible = false;
+            this.txtFind.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtFind.Lines = new string[0];
+            this.txtFind.Location = new System.Drawing.Point(46, 3);
+            this.txtFind.MaxLength = 32767;
+            this.txtFind.Name = "txtFind";
+            this.txtFind.PasswordChar = '\0';
+            this.txtFind.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtFind.SelectedText = "";
+            this.txtFind.SelectionLength = 0;
+            this.txtFind.SelectionStart = 0;
+            this.txtFind.Size = new System.Drawing.Size(149, 27);
+            this.txtFind.TabIndex = 7;
+            this.txtFind.UseSelectable = true;
+            this.txtFind.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtFind.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // btnHighlightAll
+            // 
+            this.btnHighlightAll.BackColor = System.Drawing.Color.Transparent;
+            this.btnHighlightAll.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHighlightAll.BackgroundImage")));
+            this.btnHighlightAll.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnHighlightAll.Location = new System.Drawing.Point(267, 3);
+            this.btnHighlightAll.Name = "btnHighlightAll";
+            this.btnHighlightAll.Size = new System.Drawing.Size(27, 27);
+            this.btnHighlightAll.TabIndex = 5;
+            this.btnHighlightAll.UseSelectable = true;
+            // 
+            // btnNext
+            // 
+            this.btnNext.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnNext.BackgroundImage = global::ScintillaNET_FindReplaceDialog.Properties.Resources.next;
+            this.btnNext.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnNext.Location = new System.Drawing.Point(201, 3);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(27, 27);
+            this.btnNext.TabIndex = 2;
+            this.btnNext.UseSelectable = true;
+            // 
+            // btnPrevious
+            // 
+            this.btnPrevious.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPrevious.BackgroundImage = global::ScintillaNET_FindReplaceDialog.Properties.Resources.previous;
+            this.btnPrevious.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPrevious.Location = new System.Drawing.Point(234, 3);
+            this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.Size = new System.Drawing.Size(27, 27);
+            this.btnPrevious.TabIndex = 4;
+            this.btnPrevious.UseSelectable = true;
             // 
             // IncrementalSearcher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Controls.Add(this.tlpIncrementalSearch);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "IncrementalSearcher";
-            this.Size = new System.Drawing.Size(259, 22);
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
+            this.Size = new System.Drawing.Size(336, 35);
+            this.tlpIncrementalSearch.ResumeLayout(false);
+            this.tlpIncrementalSearch.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label lblFind;
-        private System.Windows.Forms.TextBox txtFind;
-        private System.Windows.Forms.Button btnNext;
-        private System.Windows.Forms.Button brnPrevious;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button btnHighlightAll;
-        private System.Windows.Forms.ToolTip toolTip;
-        private System.Windows.Forms.Button btnClearHighlights;
+        private System.Windows.Forms.TableLayoutPanel tlpIncrementalSearch;
+        private MetroFramework.Controls.MetroLabel lblFind;
+        private MetroFramework.Controls.MetroButton btnClearHighlights;
+        private MetroFramework.Controls.MetroTextBox txtFind;
+        private MetroFramework.Controls.MetroButton btnHighlightAll;
+        private MetroFramework.Controls.MetroButton btnNext;
+        private MetroFramework.Controls.MetroButton btnPrevious;
     }
 }

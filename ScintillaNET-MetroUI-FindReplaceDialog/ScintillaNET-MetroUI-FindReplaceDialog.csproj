@@ -82,6 +82,9 @@
     <Compile Include="FindReplace\IncrementalSearcher.Designer.cs">
       <DependentUpon>IncrementalSearcher.cs</DependentUpon>
     </Compile>
+    <Compile Include="FindReplace\ToolStripIncrementalSearcher.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="GoTo\GoTo.cs" />
     <Compile Include="GoTo\GoToDialog.cs">
       <SubType>Form</SubType>
@@ -115,13 +118,11 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\Clock.ico" />
-    <Content Include="Resources\Clock.png" />
-    <Content Include="Resources\DeleteHS.png" />
+    <None Include="Resources\x %28Custom%29.png" />
+    <None Include="Resources\marker %28Custom%29.png" />
+    <None Include="Resources\previous.png" />
+    <None Include="Resources\next.png" />
     <None Include="Resources\go %28Custom%29.png" />
-    <Content Include="Resources\GoToNextMessage.png" />
-    <Content Include="Resources\GoToPreviousMessage.png" />
-    <Content Include="Resources\LineColorHS.png" />
     <None Include="Resources\recent %28Custom%29.png" />
     <None Include="Resources\recent.png" />
   </ItemGroup>

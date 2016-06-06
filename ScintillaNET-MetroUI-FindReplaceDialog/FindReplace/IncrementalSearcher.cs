@@ -1,7 +1,6 @@
 namespace ScintillaNET_FindReplaceDialog
 {
     using ScintillaNET;
-    using ScintillaNET_FindReplaceDialog;
     using System;
     using System.ComponentModel;
     using System.Drawing;
@@ -20,14 +19,30 @@ namespace ScintillaNET_FindReplaceDialog
 
         #region Constructors
 
+        public IncrementalSearcher(Scintilla scintilla) : this()
+        {
+            this._scintilla = scintilla;
+        }
+
         public IncrementalSearcher()
         {
             InitializeComponent();
+
+            this.btnClearHighlights.Click += btnClearHighlights_Click;
+            this.btnPrevious.Click += btnPrevious_Click;
+            this.btnNext.Click += btnNext_Click;
+            this.btnClearHighlights.Click += btnClearHighlights_Click;
+            this.btnHighlightAll.Click += btnHighlightAll_Click;
+            this.txtFind.KeyDown += txtFind_KeyDown;
+            this.txtFind.TextChanged += txtFind_TextChanged;
+
         }
 
-        public IncrementalSearcher(bool toolItem)
+        public IncrementalSearcher(bool toolItem, Scintilla scintilla = null) : this()
         {
-            InitializeComponent();
+            if ( scintilla != null )
+                this.Scintilla = scintilla;
+
             _toolItem = toolItem;
             if (toolItem)
                 BackColor = Color.Transparent;
@@ -109,7 +124,7 @@ namespace ScintillaNET_FindReplaceDialog
 
         #region Event Handlers
 
-        private void brnPrevious_Click(object sender, EventArgs e)
+        private void btnPrevious_Click(object sender, EventArgs e)
         {
             findPrevious();
         }
@@ -123,18 +138,61 @@ namespace ScintillaNET_FindReplaceDialog
 
         private void btnHighlightAll_Click(object sender, EventArgs e)
         {
-            if (txtFind.Text == string.Empty)
+            if (this.txtFind.Text == string.Empty)
                 return;
             if (_scintilla == null)
                 return;
 
-            int foundCount = _findReplace.FindAll(txtFind.Text, false, true).Count;
+            int foundCount = _findReplace.FindAll(this.txtFind.Text, false, true).Count;
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
             findNext();
         }
+        private void txtFind_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Enter:
+                case Keys.Down:
+                    findNext();
+                    e.Handled = true;
+                    break;
+
+                case Keys.Up:
+                    findPrevious();
+                    e.Handled = true;
+                    break;
+
+                case Keys.Escape:
+                    if (!_toolItem)
+                        Hide();
+                    break;
+            }
+        }
+
+        private void txtFind_TextChanged(object sender, EventArgs e)
+        {
+            this.txtFind.BackColor = SystemColors.Window;
+            if (this.txtFind.Text == string.Empty)
+                return;
+            if (_scintilla == null)
+                return;
+
+            int pos = Math.Min(_scintilla.CurrentPosition, _scintilla.AnchorPosition);
+            ScintillaNET_FindReplaceDialog.CharacterRange r = _findReplace.Find(pos, _scintilla.TextLength, this.txtFind.Text, _findReplace.Window.GetSearchFlags());
+            if (r.cpMin == r.cpMax)
+                r = _findReplace.Find(0, pos, this.txtFind.Text, _findReplace.Window.GetSearchFlags());
+
+            if (r.cpMin != r.cpMax)
+                _scintilla.SetSel(r.cpMin, r.cpMax);
+            else
+                this.txtFind.BackColor = Color.Tomato;
+
+            MoveFormAwayFromSelection();
+        }
+
 
         #endregion Event Handlers
 
@@ -193,7 +251,7 @@ namespace ScintillaNET_FindReplaceDialog
         {
             base.OnCreateControl();
             MoveFormAwayFromSelection();
-            txtFind.Focus();
+            this.txtFind.Focus();
         }
 
         protected override void OnLeave(EventArgs e)
@@ -207,25 +265,25 @@ namespace ScintillaNET_FindReplaceDialog
         {
             base.OnVisibleChanged(e);
 
-            txtFind.Text = string.Empty;
-            txtFind.BackColor = SystemColors.Window;
+            this.txtFind.Text = string.Empty;
+            this.txtFind.BackColor = SystemColors.Window;
 
             MoveFormAwayFromSelection();
 
             if (Visible)
-                txtFind.Focus();
+                this.txtFind.Focus();
             else if (_scintilla != null)
                 _scintilla.Focus();
         }
 
         private void findNext()
         {
-            if (txtFind.Text == string.Empty)
+            if (this.txtFind.Text == string.Empty)
                 return;
             if (_scintilla == null)
                 return;
 
-            ScintillaNET_FindReplaceDialog.CharacterRange r = _findReplace.FindNext(txtFind.Text, true, _findReplace.Window.GetSearchFlags());
+            ScintillaNET_FindReplaceDialog.CharacterRange r = _findReplace.FindNext(this.txtFind.Text, true, _findReplace.Window.GetSearchFlags());
             if (r.cpMin != r.cpMax)
                 _scintilla.SetSel(r.cpMin, r.cpMax);
 
@@ -234,57 +292,14 @@ namespace ScintillaNET_FindReplaceDialog
 
         private void findPrevious()
         {
-            if (txtFind.Text == string.Empty)
+            if (this.txtFind.Text == string.Empty)
                 return;
             if (_scintilla == null)
                 return;
 
-            ScintillaNET_FindReplaceDialog.CharacterRange r = _findReplace.FindPrevious(txtFind.Text, true, _findReplace.Window.GetSearchFlags());
+            ScintillaNET_FindReplaceDialog.CharacterRange r = _findReplace.FindPrevious(this.txtFind.Text, true, _findReplace.Window.GetSearchFlags());
             if (r.cpMin != r.cpMax)
                 _scintilla.SetSel(r.cpMin, r.cpMax);
-
-            MoveFormAwayFromSelection();
-        }
-
-        private void txtFind_KeyDown(object sender, KeyEventArgs e)
-        {
-            switch (e.KeyCode)
-            {
-                case Keys.Enter:
-                case Keys.Down:
-                    findNext();
-                    e.Handled = true;
-                    break;
-
-                case Keys.Up:
-                    findPrevious();
-                    e.Handled = true;
-                    break;
-
-                case Keys.Escape:
-                    if (!_toolItem)
-                        Hide();
-                    break;
-            }
-        }
-
-        private void txtFind_TextChanged(object sender, EventArgs e)
-        {
-            txtFind.BackColor = SystemColors.Window;
-            if (txtFind.Text == string.Empty)
-                return;
-            if (_scintilla == null)
-                return;
-
-            int pos = Math.Min(_scintilla.CurrentPosition, _scintilla.AnchorPosition);
-            ScintillaNET_FindReplaceDialog.CharacterRange r = _findReplace.Find(pos, _scintilla.TextLength, txtFind.Text, _findReplace.Window.GetSearchFlags());
-            if (r.cpMin == r.cpMax)
-                r = _findReplace.Find(0, pos, txtFind.Text, _findReplace.Window.GetSearchFlags());
-
-            if (r.cpMin != r.cpMax)
-                _scintilla.SetSel(r.cpMin, r.cpMax);
-            else
-                txtFind.BackColor = Color.Tomato;
 
             MoveFormAwayFromSelection();
         }

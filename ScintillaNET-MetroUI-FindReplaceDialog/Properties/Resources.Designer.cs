@@ -63,26 +63,6 @@ namespace ScintillaNET_FindReplaceDialog.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Clock {
-            get {
-                object obj = ResourceManager.GetObject("Clock", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap DeleteHS {
-            get {
-                object obj = ResourceManager.GetObject("DeleteHS", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap go__Custom_ {
             get {
                 object obj = ResourceManager.GetObject("go (Custom)", resourceCulture);
@@ -93,9 +73,9 @@ namespace ScintillaNET_FindReplaceDialog.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap GoToNextMessage {
+        internal static System.Drawing.Bitmap marker__Custom_ {
             get {
-                object obj = ResourceManager.GetObject("GoToNextMessage", resourceCulture);
+                object obj = ResourceManager.GetObject("marker (Custom)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +83,9 @@ namespace ScintillaNET_FindReplaceDialog.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap GoToPreviousMessage {
+        internal static System.Drawing.Bitmap next {
             get {
-                object obj = ResourceManager.GetObject("GoToPreviousMessage", resourceCulture);
+                object obj = ResourceManager.GetObject("next", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +93,9 @@ namespace ScintillaNET_FindReplaceDialog.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LineColorHS {
+        internal static System.Drawing.Bitmap previous {
             get {
-                object obj = ResourceManager.GetObject("LineColorHS", resourceCulture);
+                object obj = ResourceManager.GetObject("previous", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,6 +116,16 @@ namespace ScintillaNET_FindReplaceDialog.Properties {
         internal static System.Drawing.Bitmap recent__Custom_ {
             get {
                 object obj = ResourceManager.GetObject("recent (Custom)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap x__Custom_ {
+            get {
+                object obj = ResourceManager.GetObject("x (Custom)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

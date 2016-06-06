@@ -261,7 +261,7 @@ namespace ScintillaNET_FindReplaceDialog
             // 
             // 
             this.txtFindF.CustomButton.Image = null;
-            this.txtFindF.CustomButton.Location = new System.Drawing.Point(515, 2);
+            this.txtFindF.CustomButton.Location = new System.Drawing.Point(263, 2);
             this.txtFindF.CustomButton.Name = "";
             this.txtFindF.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtFindF.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -278,7 +278,7 @@ namespace ScintillaNET_FindReplaceDialog
             this.txtFindF.SelectedText = "";
             this.txtFindF.SelectionLength = 0;
             this.txtFindF.SelectionStart = 0;
-            this.txtFindF.Size = new System.Drawing.Size(539, 26);
+            this.txtFindF.Size = new System.Drawing.Size(287, 26);
             this.txtFindF.TabIndex = 13;
             this.txtFindF.UseSelectable = true;
             this.txtFindF.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1011,7 +1011,8 @@ namespace ScintillaNET_FindReplaceDialog
             // cmdRecentReplace
             // 
             this.cmdRecentReplace.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmdRecentReplace.BackgroundImage = global::ScintillaNET_FindReplaceDialog.Properties.Resources.Clock;
+            this.cmdRecentReplace.BackColor = System.Drawing.Color.Transparent;
+            this.cmdRecentReplace.BackgroundImage = Properties.Resources.recent__Custom_;
             this.cmdRecentReplace.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.cmdRecentReplace.Location = new System.Drawing.Point(430, 27);
             this.cmdRecentReplace.Name = "cmdRecentReplace";
@@ -1024,7 +1025,6 @@ namespace ScintillaNET_FindReplaceDialog
             // cmdRecentFindR
             // 
             this.cmdRecentFindR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmdRecentFindR.BackgroundImage = global::ScintillaNET_FindReplaceDialog.Properties.Resources.Clock;
             this.cmdRecentFindR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.cmdRecentFindR.Location = new System.Drawing.Point(430, 5);
             this.cmdRecentFindR.Name = "cmdRecentFindR";
