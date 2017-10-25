@@ -7,13 +7,13 @@ A ScintillaNET v3 Find &amp; Replace Dialog + Goto Dialog + Incremental Search
 ScintillaNET v2.5 contained Find & Replace, Goto and Incremental Search dialogs which were not included in the v3 branch. The project ports those v2.5 features into a library that will function with v3 ScintillaNET.
 
 Find/Replace Dialog:
-![Find Dialog](https://github.com/Stumpii/ScintillaNET-FindReplaceDialog/wiki/images/Find-Dialog.png)
+![Find Dialog](https://raw.githubusercontent.com/tpayne84/ScintillaNET-MetroUI-FindReplaceDialog/master/screenshots/find-and-replace-metro-ui.png)
 
 Incremental Search:
-![Incremental Search](https://github.com/Stumpii/ScintillaNET-FindReplaceDialog/wiki/images/Incremental-Search.png)
+![Incremental Search](https://raw.githubusercontent.com/tpayne84/ScintillaNET-MetroUI-FindReplaceDialog/master/screenshots/incremental-search.png)
 
 Go To Dialog:
-![Go To Dialog](https://github.com/Stumpii/ScintillaNET-FindReplaceDialog/wiki/images/Go-To-Line-Dialog.png)
+![Go To Dialog](https://raw.githubusercontent.com/tpayne84/ScintillaNET-MetroUI-FindReplaceDialog/master/screenshots/go-to-line.png)
 
 ## Documentation
 
